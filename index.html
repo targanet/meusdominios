@@ -3,87 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venda de Domínios - Oportunidade Única</title>
+    <title>Domínios Premium à Venda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #3f51b5; /* Azul Índigo */
+            --secondary-color: #f0f2f5; /* Cinza claro */
+            --text-dark: #263238; /* Azul escuro */
+            --text-light: #546e7a; /* Cinza azulado */
+            --card-bg: #ffffff;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --font-family-title: 'Montserrat', sans-serif;
+            --font-family-body: 'Roboto', sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: var(--font-family-body);
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
             line-height: 1.6;
             margin: 0;
-            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-        }
-        .container {
-            width: 90%;
-            max-width: 800px;
             padding: 20px;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+        }
+
+        .container {
+            display: flex;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+            max-width: 1000px;
+            width: 100%;
+            overflow: hidden;
+            flex-direction: column;
+        }
+
+        .header {
             text-align: center;
+            padding: 30px;
+            border-bottom: 2px solid var(--primary-color);
         }
+
         h1 {
-            color: #444;
-            font-size: 2em;
-            margin-bottom: 10px;
+            font-family: var(--font-family-title);
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin: 0;
         }
-        p {
-            font-size: 1.1em;
-            margin-bottom: 25px;
+
+        .intro-text {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-top: 10px;
         }
-        ul {
+
+        .content {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .domain-list-section {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .domain-list {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
-        li {
-            background: #e9ecef;
-            margin: 10px 0;
-            padding: 15px;
-            border-left: 5px solid #007bff;
-            font-size: 1.2em;
-            border-radius: 4px;
-        }
-        .contact-info {
-            margin-top: 30px;
-            padding: 15px;
-            background: #007bff;
-            color: #fff;
+
+        .domain-list li {
+            padding: 20px;
+            background-color: var(--secondary-color);
             border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
-        .contact-info a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
+
+        .domain-list li:hover {
+            background-color: #d1d9ff;
+            transform: scale(1.02);
+        }
+
+        .info-panel-section {
+            flex: 1.5;
+            padding: 30px;
+            background-color: #e8eaf6;
+            border-left: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .info-panel-section .panel-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.5s ease-in-out;
+            opacity: 1;
+        }
+        
+        .info-panel-section .panel-content {
+            text-align: center;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 1;
+        }
+
+        .info-panel-section h3 {
+            font-family: var(--font-family-title);
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin: 0 0 10px 0;
+        }
+
+        .info-panel-section p {
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .contact-cta {
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .contact-cta h3 {
+            font-family: var(--font-family-title);
+            font-size: 1.8rem;
+            margin: 0 0 10px 0;
+        }
+
+        .contact-cta a {
+            color: #ffffff;
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .content {
+                flex-direction: column;
+            }
+            .domain-list-section, .info-panel-section {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <h1>Domínios à Venda</h1>
-        <p>Aproveite esta oportunidade única para adquirir domínios de alto potencial para seu negócio ou projeto online.</p>
+        <div class="header">
+            <h1>Domínios Exclusivos à Venda</h1>
+            <p class="intro-text">
+                Descubra o potencial de cada domínio e faça uma oferta para o seu negócio.
+            </p>
+        </div>
 
-        <ul>
-            <li>www.prontuarioonline.com.br</li>
-            <li>www.inscricaoonline.com.br</li>
-            <li>www.inscricaoonline.com</li>
-            <li>www.rodeioeletronico.com.br</li>
-        </ul>
+        <div class="content">
+            <div class="domain-list-section">
+                <ul class="domain-list">
+                    <li data-domain="prontuarioonline">www.prontuarioonline.com.br</li>
+                    <li data-domain="inscricaoonlinebr">www.inscricaoonline.com.br</li>
+                    <li data-domain="inscricaoonline">www.inscricaoonline.com</li>
+                    <li data-domain="rodeioeletronico">www.rodeioeletronico.com.br</li>
+                </ul>
+            </div>
 
-        <p>Interessado em algum desses domínios? Entre em contato para mais informações.</p>
+            <div class="info-panel-section">
+                <img id="panel-image" class="panel-image" src="https://picsum.photos/id/1018/600/400" alt="Imagem relacionada ao domínio">
+                <div id="panel-content" class="panel-content">
+                    <h3>Passe o mouse sobre um domínio para ver mais</h3>
+                    <p>Aqui você verá uma imagem e informações sobre o domínio selecionado.</p>
+                </div>
+            </div>
+        </div>
 
-        <div class="contact-info">
-            <h3>Fale Conosco</h3>
+        <div class="contact-cta">
+            <h3>Ficou interessado? Entre em Contato!</h3>
             <p>
-                <strong>Telefone:</strong> <a href="tel:+5517991335295">17 99133-5295</a><br>
+                <strong>Telefone:</strong> <a href="tel:+5517991335295">(17) 99133-5295</a><br>
                 <strong>E-mail:</strong> <a href="mailto:targanet@hotmail.com">targanet@hotmail.com</a>
             </p>
         </div>
     </div>
 
+    <script>
+        const domainItems = document.querySelectorAll('.domain-list li');
+        const panelImage = document.getElementById('panel-image');
+        const panelContent = document.getElementById('panel-content');
+
+        const domainData = {
+            prontuarioonline: {
+                image: 'https://picsum.photos/id/1015/600/400',
+                title: 'Prontuário Online - Saúde Digital',
+                description: 'Domínio ideal para clínicas médicas, hospitais, ou sistemas de gestão de prontuários eletrônicos. Perfeito para inovar na área da saúde.'
+            },
+            inscricaoonlinebr: {
+                image: 'https://picsum.photos/id/1016/600/400',
+                title: 'Inscrição Online - Eventos e Cursos',
+                description: 'Ótimo para plataformas de gerenciamento de eventos, cursos, workshops, ou qualquer tipo de inscrição online. Focado no público brasileiro.'
+            },
+            inscricaoonline: {
+                image: 'https://picsum.photos/id/1020/600/400',
+                title: 'Inscrição Online - Potencial Global',
+                description: 'Uma opção mais abrangente para negócios que visam o mercado internacional. Ideal para plataformas de registro e cadastro online em diversas áreas.'
+            },
+            rodeioeletronico: {
+                image: 'rodeio.jpg',
+                title: 'Rodeio Eletrônico - Entretenimento Inovador',
+                description: 'Perfeito para projetos de e-sports, jogos, eventos de rodeio digital, ou plataformas de entretenimento com um toque moderno e tecnológico.'
+            }
+        };
+
+        domainItems.forEach(item => {
+            item.addEventListener('mouseover', () => {
+                const domainKey = item.getAttribute('data-domain');
+                const data = domainData[domainKey];
+
+                if (data) {
+                    panelImage.style.opacity = '0';
+                    panelContent.style.opacity = '0';
+                    setTimeout(() => {
+                        panelImage.src = data.image;
+                        panelContent.innerHTML = `<h3>${data.title}</h3><p>${data.description}</p>`;
+                        panelImage.style.opacity = '1';
+                        panelContent.style.opacity = '1';
+                    }, 500); 
+                }
+            });
+
+            item.addEventListener('mouseout', () => {
+                // Opcional: Você pode restaurar o estado padrão se o mouse sair
+                // por exemplo, mostrando uma mensagem genérica novamente
+            });
+        });
+    </script>
 </body>
 </html>
